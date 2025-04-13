@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Bulakshmi Embroidery Work</title>
+
+    <!-- Font Awesome CDN -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right top, #ffe0f0, #ecd8fa, #d8f0ff);
+        color: #333;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        background: linear-gradient(135deg, #f5a2d4, #cba6f7);
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-circle {
+        background-color: white;
+        color: #d86adf;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .logo-text h1 {
+        margin-left: 10px;
+        font-size: 24px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 30px 20px;
+      }
+
+      .contact-card {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #a64dff;
+        margin-bottom: 20px;
+      }
+
+      .contact-info {
+        font-size: 18px;
+        line-height: 1.7;
+        text-align: left;
+      }
+
+      .contact-info .info-item {
+        margin-bottom: 15px;
+      }
+
+      .contact-info strong {
+        color: #5f27cd;
+      }
+
+      .contact-info a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+        color: #a64dff;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+      }
+
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s ease;
+      }
+
+      .social-icons a:hover {
+        transform: scale(1.1);
+      }
+
+      footer {
+        background: #cba6f7;
+        color: white;
+        text-align: center;
+        padding: 12px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 600px) {
+        .contact-card {
+          padding: 25px;
+        }
+
+        .logo-text h1 {
+          font-size: 20px;
+        }
+
+        nav a {
+          margin-left: 10px;
+          font-size: 14px;
+        }
+
+        .contact-info {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <div class="logo-circle">B</div>
+        <div class="logo-text"><h1>Bulakshmi</h1></div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="designs.html">Designs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="contact-card">
+        <h2>Get in Touch</h2>
+        <div class="contact-info">
+          <div class="info-item">
+            <strong>Phone / WhatsApp:</strong>
+            <a href="https://wa.me/919502015226" target="_blank"
+              >+91 9502015226</a
+            >
+          </div>
+          <div class="info-item">
+            <strong>Email:</strong>
+            <span>anuradha964060@gmail.com</span>
+          </div>
+          <div class="info-item">
+            <strong>Address:</strong>
+            <span
+              >Bondada, near high school, kalla mandalam, Andhra Pradesh,
+              India</span
+            >
+          </div>
+          <div class="info-item">
+            <strong>Business Hours:</strong>
+            <span>Monday – Sunday, 9:00 AM – 8:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-icons">
+        <!-- Instagram -->
+        <a
+          href="https://www.instagram.com/anuradha_vlogs/"
+          target="_blank"
+          title="Instagram"
+        >
+          <i class="fab fa-instagram" style="color: #e4405f"></i>
+        </a>
+
+        <!-- YouTube -->
+        <a
+          href="https://www.youtube.com/@anuradha5878"
+          target="_blank"
+          title="YouTube"
+        >
+          <i class="fab fa-youtube" style="color: #ff0000"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919502015226" target="_blank" title="WhatsApp">
+          <i class="fab fa-whatsapp" style="color: #25d366"></i>
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      &copy; 2025 Bulakshmi Embroidery Design Work. All rights reserved.
+    </footer>
+  </body>
+</html>

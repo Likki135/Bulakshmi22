@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulakshmi Designs</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #e0f7fa, #fff);
+        color: #333;
+        scroll-behavior: smooth;
+        line-height: 1.6;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #56ccf2, #2d87d7);
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-circle {
+        background-color: white;
+        color: #56ccf2;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .logo-text h1 {
+        margin-left: 10px;
+        font-size: 24px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #f0f8ff;
+      }
+
+      h2.design-heading {
+        text-align: center;
+        padding-top: 40px;
+        font-size: 32px;
+        color: #2d87d7;
+      }
+
+      .design-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        padding: 40px 20px;
+      }
+
+      .design-card {
+        background: linear-gradient(to bottom right, #ffffff, #f0f8ff);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 280px;
+        transition: transform 0.3s ease;
+        overflow: hidden;
+      }
+
+      .design-card:hover {
+        transform: scale(1.05);
+      }
+
+      .design-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 3px solid #56ccf2;
+        cursor: pointer;
+      }
+
+      .card-info {
+        padding: 15px;
+        text-align: center;
+      }
+
+      .card-info .cost {
+        font-size: 16px;
+        font-weight: bold;
+        color: #2d87d7;
+        margin-bottom: 10px;
+      }
+
+      .btn-gradient {
+        display: inline-block;
+        background: linear-gradient(135deg, #56ccf2, #2d87d7);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 12px;
+        transition: background 0.3s ease;
+      }
+
+      .btn-gradient:hover {
+        background: linear-gradient(135deg, #2d87d7, #56ccf2);
+      }
+
+      .contact-section {
+        padding: 30px 20px;
+        background: #f9f9f9;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .contact-section h3 {
+        font-size: 24px;
+        color: #2d87d7;
+        margin-bottom: 10px;
+      }
+
+      .contact-section p {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      .social-icons {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .social-icons a {
+        color: inherit;
+        transition: transform 0.3s;
+      }
+
+      .social-icons a:hover {
+        transform: scale(1.2);
+      }
+
+      .footer {
+        background: #2d87d7;
+        color: white;
+        text-align: center;
+        padding: 10px 5px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        .design-gallery {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .design-card {
+          width: 90%;
+          max-width: 320px;
+        }
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .modal-content {
+        margin: 5% auto;
+        display: block;
+        max-width: 90%;
+        max-height: 80%;
+      }
+
+      .modal-content img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .modal-close:hover {
+        color: #ccc;
+      }
+
+      .social-share {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .social-share a {
+        font-size: 18px;
+        color: #56ccf2;
+        text-decoration: none;
+      }
+
+      .social-share a:hover {
+        color: #2d87d7;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <div class="logo-circle">B</div>
+        <div class="logo-text">
+          <h1>Bulakshmi</h1>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="designs.html">Designs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <h2 class="design-heading">Our Designs</h2>
+
+    <section class="design-gallery">
+      <!-- Design Cards - All 21 Cards -->
+      <div class="design-card">
+        <img
+          src="images/img1.jpg"
+          alt="Design 1"
+          onclick="openModal('images/img1.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹500.00</div>
+          <div class="social-share">
+            <a href="images/img1.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img1.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img2.jpg"
+          alt="Design 2"
+          onclick="openModal('images/img2.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹550.00</div>
+          <div class="social-share">
+            <a href="images/img2.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img2.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img3.jpg"
+          alt="Design 3"
+          onclick="openModal('images/img3.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹500.00</div>
+          <div class="social-share">
+            <a href="images/img3.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img3.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img4.jpg"
+          alt="Design 4"
+          onclick="openModal('images/img4.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹500.00</div>
+          <div class="social-share">
+            <a href="images/img4.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img4.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="design-card">
+        <img
+          src="images/img6.jpg"
+          alt="Design 6"
+          onclick="openModal('images/img6.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹600.00</div>
+          <div class="social-share">
+            <a href="images/img6.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img6.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img7.jpg"
+          alt="Design 7"
+          onclick="openModal('images/img7.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹500.00</div>
+          <div class="social-share">
+            <a href="images/img7.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img7.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img8.jpg"
+          alt="Design 8"
+          onclick="openModal('images/img8.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹6500.00</div>
+          <div class="social-share">
+            <a href="images/img8.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img8.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img9.jpg"
+          alt="Design 9"
+          onclick="openModal('images/img9.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹600.00</div>
+          <div class="social-share">
+            <a href="images/img9.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img9.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img10.jpg"
+          alt="Design 10"
+          onclick="openModal('images/img10.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹550.00</div>
+          <div class="social-share">
+            <a href="images/img10.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img10.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img11.jpg"
+          alt="Design 11"
+          onclick="openModal('images/img11.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹650.00</div>
+          <div class="social-share">
+            <a href="images/img11.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img11.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img12.jpg"
+          alt="Design 12"
+          onclick="openModal('images/img12.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹600.00</div>
+          <div class="social-share">
+            <a href="images/img12.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img12.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img13.jpg"
+          alt="Design 13"
+          onclick="openModal('images/img13.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹650.00</div>
+          <div class="social-share">
+            <a href="images/img13.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img13.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img14.jpg"
+          alt="Design 14"
+          onclick="openModal('images/img14.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹600.00</div>
+          <div class="social-share">
+            <a href="images/img14.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img14.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img15.jpg"
+          alt="Design 15"
+          onclick="openModal('images/img15.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹500.00</div>
+          <div class="social-share">
+            <a href="images/img15.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img15.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img16.jpg"
+          alt="Design 16"
+          onclick="openModal('images/img16.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹550.00</div>
+          <div class="social-share">
+            <a href="images/img16.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img16.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img17.jpg"
+          alt="Design 17"
+          onclick="openModal('images/img17.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹500.00</div>
+          <div class="social-share">
+            <a href="images/img17.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img17.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img18.jpg"
+          alt="Design 18"
+          onclick="openModal('images/img18.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹550.00</div>
+          <div class="social-share">
+            <a href="images/img18.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img18.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img19.jpg"
+          alt="Design 19"
+          onclick="openModal('images/img19.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹500.00</div>
+          <div class="social-share">
+            <a href="images/img19.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img19.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img20.jpg"
+          alt="Design 20"
+          onclick="openModal('images/img20.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹550.00</div>
+          <div class="social-share">
+            <a href="images/img20.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img20.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <img
+          src="images/img21.jpg"
+          alt="Design 21"
+          onclick="openModal('images/img21.jpg')"
+        />
+        <div class="card-info">
+          <div class="cost">₹500.00</div>
+          <div class="social-share">
+            <a href="images/img21.jpg" download
+              ><i class="fas fa-download"></i
+            ></a>
+            <a
+              href="https://wa.me/?text=Check%20out%20this%20design%3A%20images/img21.jpg"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repeat this pattern for designs 6 to 21 -->
+    </section>
+
+    <!-- Modal for Image Preview -->
+    <div id="modal" class="modal">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modal-image" />
+    </div>
+
+    <section class="contact-section">
+      <h3>Contact Us</h3>
+      <p>Have any questions or inquiries? Reach out to us below:</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/anuradha_vlogs/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@anuradha5878" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://wa.me/919502015226" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Bulakshmi Designs. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Modal functionality
+      function openModal(imageSrc) {
+        var modal = document.getElementById("modal");
+        var modalImg = document.getElementById("modal-image");
+        modal.style.display = "block";
+        modalImg.src = imageSrc;
+      }
+
+      function closeModal() {
+        var modal = document.getElementById("modal");
+        modal.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
